@@ -1,6 +1,7 @@
 body {
     background: #F3F5FC;
     font-family: Inter, Arial;
+    scroll-behavior: smooth;
 }
 
 header #logo {
@@ -33,7 +34,7 @@ aside {
     display: flex;
     justify-content: center;
     position: fixed;
-    width: 20vw;
+    width: 22vw;
     height: 85vh;
     left: 75%;
     top: 6%;
@@ -68,12 +69,17 @@ aside #muñeco {
 
 #parrafoAside {
     color: #495057;
-    font-size: 0.85vw;
+    font-size: 1vw;
 }
 
 #copiarBtn {
     display: none;
     position: absolute;
+    background: #ffffff;
+    color: #0A3871;
+    border: 0.1vw solid #0A3871;
+    top: 69vh;
+    width: 85;
 }
 
 .label {
@@ -103,7 +109,6 @@ aside #muñeco {
     align-items: flex-start;
     gap: 3vw;
     position: absolute;
-    width: 60vw;
     height: 4.2vh;
     left: 12.7vw;
     top: 75vh;
@@ -111,9 +116,8 @@ aside #muñeco {
 
 button {   
     font-size: 1.1vw;
-    padding: 1.5%;
-    width: 15vw;
-    height: 10vh;
+    width: 20vw;
+    height: 8vh;
     background: #0A3871;
     border: none;
     border-radius: 1vw;
@@ -123,8 +127,131 @@ button {
 #desencriptarBtn {
     background: #D8DFE8;
     color: #0A3871;
-    border: .05vw solid #0A3871;
+    border: .1vw solid #0A3871;
 }
 
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 835px) {
+    form #inputTexto {
+        font-size: 3.5vw;
+        top: 25vh;
+        left: 5vw;        
+    }
+
+    aside #muñeco {
+        display: none;
+    }
+
+    aside {
+        left: 5vw;
+        top: 65vh;
+        width: 90vw;
+        height: 30vh;
+    }
+    
+    .mensajes {
+        top: 8vh;
+    }
+
+    #mensajeAside {
+        font-size: 2.6vw;
+    }
+    
+    #parrafoAside {
+        font-size: 2vw;
+    }
+
+    .botones {
+        height: 2vh;
+        top: 55vh;
+        left: 5vw;
+        width: 90vw;
+    }
+
+    .label #icono {
+        width: 1.5vw;
+        height: 1.5vh;
+    }
+    .label {
+        top: 50vh;
+        left: 5vw;
+        gap: .5vw;
+    }
+
+    .label label {
+        font-size: 1.7vw;
+    }
+
+    button {
+        font-size: 2vw;
+        width: 100vw;
+        height: 7vh;
+        border-radius: 1.6vw;
+    }
+    
+    #copiarBtn {
+        top: 20vh;
+        width: 85vw;
+    }
+}
+
+@media screen and (max-width: 428px) {
+    header #logo {
+        position: relative;
+        top: 0;
+        width: 17vw;
+        height: 12vh;
+    }
+
+    form #inputTexto {
+        font-size: 6vw;
+        width: 90vw;
+    }
+    
+    aside {
+        position: relative;
+        top: 82vh;
+        height: 40vh;
+    }
+
+    .mensajes {
+        width: 80vw;
+        top: 20%;
+    }
+
+    #mensajeAside {
+        font-size: 5vw;
+    }
+
+    #parrafoAside {
+        font-size: 4vw;
+    }
+
+    .botones {
+        flex-direction: column;
+        height: 20vh;
+        top: 75vh;
+        left: 5vw;
+    }
+
+    .label {
+        gap: 1vw;
+        top: 70vh;
+    }
+    
+    .label label {
+        font-size: 3.1vw;
+    }
+    
+    button {
+        top: 0;
+        font-size: 4.2vw;
+        width: 90vw;
+        height: 20vh;
+        border-radius: 3.6vw;
+    }
+
+    #copiarBtn {
+        height: 10vh;
+        top: 25vh;
+    }
 }

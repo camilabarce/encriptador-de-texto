@@ -26,14 +26,9 @@ function agregarEstilos(){
     divMensajes.style.textAlign = 'left';
     divMensajes.style.padding = '0 2vw';
     divMensajes.style.top = '3vh';
-    divMensajes.style.overflow = 'auto';
     parrafoAside.style.color = '#495057';
-    parrafoAside.style.fontSize = '1.5vw';
-    parrafoAside.style.lineHeight = '5.5vh';
-    copiarBtn.style.background = '#D8DFE8';
-    copiarBtn.style.color = '#0A3871';
-    copiarBtn.style.border = '.05vw solid #0A3871';
-    copiarBtn.style.top = '69.5vh';
+    // parrafoAside.style.fontSize = '1.5vw';
+    // parrafoAside.style.lineHeight = '5.5vh';
 }
 
 function ocultarMostrarElementos() {
