@@ -5,25 +5,20 @@ body {
 
 header #logo {
     position: fixed;
-    width: 7.5rem;
-    height: 3rem;
-    top: 2.5rem;
-    left: 2.5rem;
-    gap: 2.5rem;
+    width: 10vw;
+    height: 7vh;
+    top: 6%;
 }
 
 form #inputTexto {
-    font-size: 2rem;
-    letter-spacing: 0em;
+    font-size: 2vw;
     text-align: left;
     background-color: #F3F5FC;
     border: none;
     color: #0A3871;
     position: relative;
-    width: 36rem;
-    height: auto;
-    top: 7.5rem;
-    left: 15rem;
+    top: 20vh;
+    left: 12vw;
 }
 
 form #inputTexto::placeholder {
@@ -35,65 +30,69 @@ form #inputTexto:active {
 }
 
 aside {
+    display: flex;
+    justify-content: center;
     position: fixed;
-    width: 20rem;
-    height: 36rem;
-    left: 64.75rem;
-    top: 2.5rem;
+    width: 20vw;
+    height: 85vh;
+    left: 75%;
+    top: 6%;
     background: #FFFFFF;
-    box-shadow: 0 1.5rem 2rem -.5rem rgba(0, 0, 0, 0.08);
-    border-radius: 2rem;
+    box-shadow: 0 1.5vw 2vh -.5vw rgba(0, 0, 0, 0.08);
+    border-radius: 2vw;
 }
 
 aside #muñeco {
-    position: fixed;
-    width: 15rem;
-    height: 17rem;
-    left: 67.5rem;
-    top: 6rem;
+    /* Otro ejemplo */
+    width: 15vw;
+    height: 30vh;
+    position: relative;
+    top: 15%;
 }
 
 .mensajes {
     display: flex;
     flex-direction: column;
     text-align: center;
-    gap: 1.25rem;
+    gap: 2.5vh;
     position: absolute;
-    top: 22rem;
+    top: 60%;
 }
 
 #mensajeAside {
-    padding: 0 0.75rem;
+    padding: 0 1rem;
     color: #343A40;
     font-weight: 700;
-    font-size: 1.25rem;
+    font-size: 1.25vw;
 }
 
 #parrafoAside {
     color: #495057;
-    font-size: 0.85rem;
+    font-size: 0.85vw;
 }
 
 #copiarBtn {
-    position: fixed;
     display: none;
+    position: absolute;
 }
 
 .label {
     display: flex;
     flex-direction: row;
     align-items: center;
-    gap: .5rem;
-
     position: absolute;
-    width: 20rem;
-    height: 1.12rem;
-    left: 15rem;
-    top: 31rem;
+    height: auto;
+    left: 12vw;
+    top: 70vh;
+}
+
+.label #icono {
+    width: 3vw;
+    height: 3vh;
 }
 
 .label label {
-    font-size: 0.75rem;
+    font-size: .90vw;
     color: #495057;
     opacity: 0.8;
 }
@@ -102,26 +101,30 @@ aside #muñeco {
     display: flex;
     flex-direction: row;
     align-items: flex-start;
-    gap: 1.5rem;
+    gap: 3vw;
     position: absolute;
-    width: 42rem;
-    height: 4.2rem;
-    left: 15rem;
-    top: 33rem;
+    width: 60vw;
+    height: 4.2vh;
+    left: 12.7vw;
+    top: 75vh;
 }
 
 button {   
-    padding: 1.5rem;
-    width: 18rem;
-    height: 4rem;
+    font-size: 1.1vw;
+    padding: 1.5%;
+    width: 15vw;
+    height: 10vh;
     background: #0A3871;
     border: none;
-    border-radius: 1.5rem;
+    border-radius: 1vw;
     color: #FFFFFF;
 }
 
 #desencriptarBtn {
     background: #D8DFE8;
     color: #0A3871;
-    border: .05rem solid #0A3871;
+    border: .05vw solid #0A3871;
+}
+
+@media screen and (max-width: 1024px) {
 }

@@ -24,16 +24,16 @@ function desencriptarTexto() {
 
 function agregarEstilos(){
     divMensajes.style.textAlign = 'left';
-    divMensajes.style.left = '1.25rem';
-    divMensajes.style.top = '1.25rem';
+    divMensajes.style.padding = '0 2vw';
+    divMensajes.style.top = '3vh';
     divMensajes.style.overflow = 'auto';
     parrafoAside.style.color = '#495057';
-    parrafoAside.style.fontSize = '1.5rem';
-    parrafoAside.style.lineHeight = '2.25rem';
+    parrafoAside.style.fontSize = '1.5vw';
+    parrafoAside.style.lineHeight = '5.5vh';
     copiarBtn.style.background = '#D8DFE8';
     copiarBtn.style.color = '#0A3871';
-    copiarBtn.style.border = '.05rem solid #0A3871';
-    copiarBtn.style.top = '33rem';
+    copiarBtn.style.border = '.05vw solid #0A3871';
+    copiarBtn.style.top = '69.5vh';
 }
 
 function ocultarMostrarElementos() {
@@ -55,10 +55,12 @@ function copiar() {
         .then(() => {
             // Muestra un mensaje de "Copiado exitosamente" usando Toastify
             Toastify({
-                text: "¡Texto copiado exitosamente!",
+                text: "Texto copiado 😀",
                 duration: 3000,
                 style: {
+                    padding: "1.2vh 1.5vw",
                     background: "linear-gradient(to right, #0A3871, #D8DFE8)",
+                    borderRadius: "1vw"
                 },
                 gravity: "top",
                 position: "center"
