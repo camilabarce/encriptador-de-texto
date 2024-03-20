@@ -2,21 +2,44 @@ let parrafoAside = document.getElementById('parrafoAside');
 let divMensajes = document.getElementById('mensajes');
 let copiarBtn = document.getElementById('copiarBtn');
 
+function validarTexto(texto) {
+    const expresion = /[A-Za-zÁÉÍÓÚÜáéíóúü]/;
+    return expresion.test(texto);
+}
+
+function mostrarAlerta() {
+    Toastify({
+        text: "El texto no puede contener mayúsculas o acentos.",
+        duration: 3500,
+        style: {
+            background: "linear-gradient(to right, #d01206, #f8f4f7)",
+            borderRadius: "1vw"
+        },
+        gravity: "top", 
+        position: "center"
+    }).showToast();
+
+    setTimeout(() => {
+        location.reload();
+    }, 4000);
+}
+
 function encriptarTexto() {
-    let textoOriginal = document.getElementById('inputTexto').value.toLowerCase();
-    console.log(textoOriginal);
+    let textoOriginal = document.getElementById('inputTexto').value;
+    if (validarTexto(textoOriginal)) {
+        console.log(validarTexto(textoOriginal))
+        mostrarAlerta();
+        return;
+    }
     let textoEncriptado = encriptar(textoOriginal);
-    console.log(textoEncriptado);
     ocultarMostrarElementos();
     agregarEstilos();
     parrafoAside.innerHTML = textoEncriptado;
 }
 
 function desencriptarTexto() {
-    let textoOriginal = document.getElementById('inputTexto').value.toLowerCase();
-    console.log(textoOriginal);
+    let textoOriginal = document.getElementById('inputTexto').value;
     let textoDesencriptado = desencriptar(textoOriginal);
-    console.log(textoDesencriptado)
     ocultarMostrarElementos();
     agregarEstilos();
     parrafoAside.innerHTML = textoDesencriptado;
@@ -27,8 +50,6 @@ function agregarEstilos(){
     divMensajes.style.padding = '0 2vw';
     divMensajes.style.top = '3vh';
     parrafoAside.style.color = '#495057';
-    // parrafoAside.style.fontSize = '1.5vw';
-    // parrafoAside.style.lineHeight = '5.5vh';
 }
 
 function ocultarMostrarElementos() {
@@ -42,13 +63,12 @@ function ocultarMostrarElementos() {
 }
 
 function copiar() {
-    // Selecciona el texto dentro del elemento #parrafoAside
+    // selecciono el texto con innerText
     let textoParaCopiar = document.getElementById("parrafoAside").innerText;
 
-    // Copia el texto al portapapeles utilizando el API de Clipboard
+    // utilizo la API de clipboard
     navigator.clipboard.writeText(textoParaCopiar)
         .then(() => {
-            // Muestra un mensaje de "Copiado exitosamente" usando Toastify
             Toastify({
                 text: "Texto copiado 😀",
                 duration: 3000,
@@ -65,7 +85,6 @@ function copiar() {
             console.error('Error al copiar al portapapeles:', err);
         });
 }
-
 
 function encriptar(texto) {
     let letras = texto.split("");
@@ -96,11 +115,9 @@ function desencriptar(texto) {
         "ober": "o",
         "ufat": "u"
     };
-
-    Object.keys(expresionesEncriptadas).forEach(expresion => {
-        const regex = new RegExp(expresion, 'g');
-        texto = texto.replace(regex, expresionesEncriptadas[expresion]);
-    });
-
+    // creo una expresión regular que coincida con todas las expresiones encriptadas
+    const regex = new RegExp(Object.keys(expresionesEncriptadas).join('|'), 'g');
+    // reemplazo todas las expresiones encriptadas en el texto
+    texto = texto.replace(regex, match => expresionesEncriptadas[match]);
     return texto;
 }
