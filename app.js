@@ -3,7 +3,7 @@ let divMensajes = document.getElementById('mensajes');
 let copiarBtn = document.getElementById('copiarBtn');
 
 function validarTexto(texto) {
-    const expresion = /[A-Za-zÁÉÍÓÚÜáéíóúü]/;
+    const expresion = /[A-ZÁÉÍÓÚÜáéíóúü]/;
     return expresion.test(texto);
 }
 
@@ -27,7 +27,6 @@ function mostrarAlerta() {
 function encriptarTexto() {
     let textoOriginal = document.getElementById('inputTexto').value;
     if (validarTexto(textoOriginal)) {
-        console.log(validarTexto(textoOriginal))
         mostrarAlerta();
         return;
     }
