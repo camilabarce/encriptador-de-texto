@@ -54,7 +54,7 @@ function copiar() {
                 duration: 3000,
                 style: {
                     padding: "1.2vh 1.5vw",
-                    background: "linear-gradient(to right, #0A3871, #D8DFE8)",
+                    background: "linear-gradient(to right, rgb(104, 48, 130), #f0e9f0)",
                     borderRadius: "1vw"
                 },
                 gravity: "top",

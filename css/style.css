@@ -1,14 +1,18 @@
 body {
-    background: #F3F5FC;
+    background: #f8f4f7;
     font-family: Inter, Arial;
     scroll-behavior: smooth;
+}
+
+*::selection {
+    background-color: #F5C78E;
 }
 
 header #logo {
     position: fixed;
     width: 10vw;
     height: 7vh;
-    top: 6%;
+    top: 6vh;
 }
 
 form #inputTexto {
@@ -16,14 +20,14 @@ form #inputTexto {
     text-align: left;
     background-color: #F3F5FC;
     border: none;
-    color: #0A3871;
+    color: rgb(104, 48, 130);
     position: relative;
     top: 20vh;
     left: 12vw;
 }
 
 form #inputTexto::placeholder {
-    color: #0A3871;
+    color: rgb(104, 48, 130);
 }
 
 form #inputTexto:active {
@@ -76,8 +80,8 @@ aside #muñeco {
     display: none;
     position: absolute;
     background: #ffffff;
-    color: #0A3871;
-    border: 0.1vw solid #0A3871;
+    color: rgb(104, 48, 130);
+    border: 0.1vw solid rgb(104, 48, 130);
     top: 69vh;
     width: 85;
 }
@@ -118,22 +122,83 @@ button {
     font-size: 1.1vw;
     width: 20vw;
     height: 8vh;
-    background: #0A3871;
+    background: rgb(104, 48, 130);
     border: none;
     border-radius: 1vw;
     color: #FFFFFF;
 }
 
 #desencriptarBtn {
-    background: #D8DFE8;
-    color: #0A3871;
-    border: .1vw solid #0A3871;
+    background: #f0e9f0;
+    color: rgb(104, 48, 130);
+    border: .1vw solid rgb(104, 48, 130);
+}
+
+#footer {
+    position: relative;
+    top: 100vh;
+    padding-bottom: 6vh;
+    gap: 5rem;
+}
+
+#footer p {
+    text-align: center;
+}
+
+#footer p strong {
+    font-weight: 600;
+}
+
+.social {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    padding: 1rem;
+}
+
+.social a {
+    position: relative;
+    width: 4rem;
+    height: 4rem;
+    border-radius: .5rem;
+    background-position: center;
+    background-size: 2.5rem;
+    background-repeat: no-repeat;
+    transition-property: all;
+    transition-duration: .25s;
+    transition-timing-function: linear; 
+    transition-delay: .2s;
+}
+.social a:hover {
+    bottom: .5rem;
+    background-color: #eee;
+    background-size: 3.25rem;
+    box-shadow: 0 .2rem .5rem #333;
+}
+
+.correo {
+    background-image: url('../img/correo.svg');
+}
+
+.linkedin {
+    background-image: url('../img/linkedin.svg');
+}
+
+.github {
+    background-image: url('../img/github.svg');
 }
 
 @media screen and (max-width: 835px) {
+    header #logo {
+        position: relative;
+        top: 4vh;
+    }
+
     form #inputTexto {
         font-size: 3.5vw;
-        top: 25vh;
+        top: 18vh;
         left: 5vw;        
     }
 
@@ -142,8 +207,9 @@ button {
     }
 
     aside {
+        position: relative;
         left: 5vw;
-        top: 65vh;
+        top: 53vh;
         width: 90vw;
         height: 30vh;
     }
@@ -192,9 +258,13 @@ button {
         top: 20vh;
         width: 85vw;
     }
+
+    #footer {
+        top: 70vh;
+    }
 }
 
-@media screen and (max-width: 428px) {
+@media screen and (max-width: 625px) {
     header #logo {
         position: relative;
         top: 0;
@@ -203,27 +273,27 @@ button {
     }
 
     form #inputTexto {
-        font-size: 6vw;
+        font-size: 8vw;
         width: 90vw;
     }
     
     aside {
         position: relative;
         top: 82vh;
-        height: 40vh;
+        height: 50vh;
     }
 
     .mensajes {
         width: 80vw;
-        top: 20%;
+        top: 15vh;
     }
 
     #mensajeAside {
-        font-size: 5vw;
+        font-size: 6vw;
     }
 
     #parrafoAside {
-        font-size: 4vw;
+        font-size: 5vw;
     }
 
     .botones {
@@ -233,18 +303,23 @@ button {
         left: 5vw;
     }
 
+    .label #icono {
+        width: 3vw;
+        height: 3vh;
+    }
+
     .label {
-        gap: 1vw;
         top: 70vh;
+        gap: 1vw;
     }
     
     .label label {
-        font-size: 3.1vw;
+        font-size: 4vw;
     }
     
     button {
         top: 0;
-        font-size: 4.2vw;
+        font-size: 4.5vw;
         width: 90vw;
         height: 20vh;
         border-radius: 3.6vw;
@@ -252,6 +327,10 @@ button {
 
     #copiarBtn {
         height: 10vh;
-        top: 25vh;
+        top: 28vh;
+    }
+
+    #footer {
+        top: 95vh;
     }
 }
